@@ -1,6 +1,6 @@
 ﻿<h1 align="center">Welcome to  Product Landing Page 👋</h1>
 
-A Product Page as a [Free Code Camp](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page) front-end project where I show and overiew,technologies,spec 	that  Ryzen™ 5 5600X Desktop Processors offer .
+A Product Page as a [Free Code Camp](https://www.freecodecamp.org/learn/responsive-web-design/responsive-web-design-projects/build-a-product-landing-page) front-end project where I show an overiew , technologies ,specs that  Ryzen™ 5 5600X Desktop Processors offer .
 ### 🏠 [Homepage](https://abdelghanymh.github.io/ffc-product-landing-page/)
 
 ## ✨ Demo
