@@ -5,7 +5,7 @@ A Product Page as a [Free Code Camp](https://www.freecodecamp.org/learn/responsi
 
 ## ✨ Demo
 
-![demo gif](./resources/demo.gif)
+![demo gif](./resources/images/demo.gif)
 
 
 ## 🚀 Usage
