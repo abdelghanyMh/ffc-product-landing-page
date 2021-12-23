@@ -1,0 +1,233 @@
+$desktop-font-size: 16px
+$mobile-font-size: 20px
+$fs-xl: clamp(3.5rem, 12vw + 1rem, 12rem)
+$fs-600: 2rem
+$fs-400: 1rem
+$font-primary: "Google Sans",Roboto,Arial,sans-serif
+$font-secondary: Roboto,Arial,sans-serif
+$clr-grey: #A6A4A4
+%btn
+  text-decoration: none
+  font-weight: bold
+  color: black
+  padding: 14px 5px
+  align-self: center
+  border: 2px solid black
+  background-color: transparent
+  text-transform: uppercase
+  margin-top: auto
+
+@mixin flex($direction:row,$justify-content:center,$gap:10px)
+  display: flex
+  flex-direction: $direction
+  flex-wrap: wrap
+  justify-content: $justify-content
+  // gap: $gap not supported in old browsers -_-
+
+*
+  box-sizing: border-box
+  list-style-type: none
+
+html
+  scroll-behavior: smooth
+body
+  width: 100%
+  margin: 0px
+nav
+  background-color: #111
+  font-size: $mobile-font-size
+  width: 100vw
+  position: fixed
+  top: 0%
+  left: 0%
+
+.menu
+  @include flex($justify-content:space-between,$gap: 0px )
+  align-items: center
+  color: #fff
+  margin: 0px
+  padding: 10px
+  .logo img
+    max-width: 100px
+    height: 31px
+
+.toggle
+  order: 1
+  font-size: $mobile-font-size
+.nav-item
+  order: 2
+  width: 100%
+  text-align: center
+  padding: 10px
+  display: none
+
+  a
+    text-decoration: none
+    color: #fff
+    &:hover
+      text-decoration: underline
+      transition: 0.2s
+.active .nav-item
+  display: block
+  opacity: 1
+  transition: all 0.5s ease-out
+
+#content-wrapper
+  margin-top: 65px
+  font-family: $font-primary
+  img
+    width: 100%
+    height: auto
+    object-fit: cover
+
+.content-header
+  background-color: white
+  color: black
+  display: flex
+  justify-content: space-evenly
+  padding: 1em
+  h1
+    font-size: $mobile-font-size
+    text-align: center
+  span
+    cursor: pointer
+    font-size: 24px
+
+section
+  padding: 50px 0px // for better navigation
+#overview
+  background-color: #111111
+  color: white
+  padding: 2em
+  @include flex($direction: row)
+
+#details
+  @include flex($direction: column)
+  align-self: center
+  max-width: 100%
+  padding: 0px 29px 9px 15px
+  img
+    max-width: 40%
+
+#technologies
+  @include flex($direction: column)
+  background-color: $clr-grey
+.section-header
+  text-align: center
+.section-centent
+  @include flex($direction: row,$justify-content: space-around,$gap: 50px)
+  .item
+    max-width: 90%
+    margin-bottom: 20px
+    @include flex($direction:column ,$gap: 10px)
+    a
+      @extend %btn
+      &:hover
+        background-color: black
+        color: white
+
+#specs
+  background-color: #F2F2F2
+  .section-centent
+    @include flex($direction: column,$gap: 15px)
+    .item:first-child
+      h3
+        padding-left: 20px
+
+    .item:not(:first-child)
+      @include flex($direction: column )
+      li
+        margin-bottom: 5px
+
+#launch
+  .section-centent
+    @include flex($justify-content:space-evenly)
+
+    form
+      align-self: center
+      input
+        padding: 14px
+
+      input[type="submit"]
+        @extend %btn
+        &:hover
+          background-color: black
+          color: white
+
+/* Tablet Layot */
+@media all and (min-width: 700px)
+  p
+    font-size: $mobile-font-size
+  .logo
+    flex: 1
+  .nav-item
+    order: 1
+    display: block
+    width: fit-content
+  .toggle
+    display: none
+    order: 2
+  .content-header
+    align-items: center
+    span
+      padding: 5px
+      box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px
+      -webkit-border-radius: 24px
+      -webkit-border-top-left-radius: 0
+      -moz-border-radius: 24px
+      -moz-border-radius-topleft: 0
+      border-radius: 24px
+      border-top-left-radius: 0
+
+  #specs .section-centent
+    flex-direction: row
+    justify-content: space-around
+
+/* Desktop Layout  */
+@media all and (min-width: 960px)
+  .menu
+    padding-right: 42px
+  #content-wrapper
+    margin-top: 13vh
+    #overview
+      flex-direction: row
+      img
+        width: 49%
+  .section-centent
+    .item
+      max-width: 30%
+  #launch
+    .item
+      max-width: 100%
+  #technologies
+    .section-centent
+      .item
+        display: flex
+        flex-direction: column
+        max-width: 30%
+
+footer
+  justify-content: center
+  align-items: center
+  text-align: center
+  padding-top: 5.2em
+  padding-bottom: 10px
+  background-color: white
+  color: black
+  &::before
+    content: ''
+    width: 50%
+    height: 8px
+    background-color: $clr-grey
+    display: block
+    margin-bottom: 5px
+    border-radius: 8px
+    margin: 10px auto
+  svg
+    fill: #1e3391
+  a
+    padding-left: 0.3em
+    &:hover
+      color: lighten(#1e3391 , 20%)
+      text-decoration-line: underline
+      text-decoration-style: dotted
